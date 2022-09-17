@@ -58,6 +58,10 @@ img {
   height: auto;
 }
 
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -528,10 +532,6 @@ img {
 
 .nav:last-child {
   margin-right: 0px;
-}
-
-.header {
-  border-bottom: 1px solid #ececec;
 }
 
 .container.top {
