@@ -27,7 +27,6 @@ body {
   color: var(--main-text-color);
   font-family: roboto, sans-serif;
   letter-spacing: 0.03em;
-  width: 1600px;
 }
 
 ul {
@@ -61,8 +60,6 @@ button {
 
 .header {
   border-bottom: 1px solid #ececec;
-  max-width: 1600px;
-  max-height: 80px;
 }
 
 .section {
@@ -76,7 +73,8 @@ button {
 }
 
 .logo-link {
-  display: block;
+  display: flex;
+  align-items: center;
   font-family: raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
@@ -119,6 +117,7 @@ button {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  position: relative;
 }
 
 .site-nav:hover,
@@ -126,11 +125,7 @@ button {
   color: var(--nav-text-color);
 }
 
-.box-nav {
-  position: relative;
-}
-
-.box-nav::after {
+.site-nav::after {
   display: block;
   content: '';
   position: absolute;
@@ -143,24 +138,9 @@ button {
   opacity: 0;
 }
 
-.box-nav:hover::after {
+.site-nav:hover::after,
+.site-nav:focus::after {
   opacity: 1;
-}
-
-.box-nav-current {
-  position: relative;
-}
-
-.box-nav-current::after {
-  display: block;
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  left: 0;
-  border-radius: 2px;
-  background-color: var(--nav-text-color);
 }
 
 .site-nav-current {
@@ -173,6 +153,19 @@ button {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  position: relative;
+}
+
+.site-nav-current::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+  background-color: var(--nav-text-color);
 }
 
 .contacts-top {
@@ -182,12 +175,13 @@ button {
 }
 
 .link {
+  display: flex;
+  align-items: center;
   color: var(--secondary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -211,6 +205,11 @@ button {
   margin-left: auto;
 }
 
+.container.top {
+  display: flex;
+  align-items: center;
+}
+
 .main {
   background-color: #c4c4c4;
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -220,7 +219,9 @@ button {
   background-size: cover;
   background-position: center;
   max-width: 1600px;
-  max-height: 600px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin: 0 auto;
 }
 
 .main-title {
@@ -492,11 +493,6 @@ button {
   margin: -1px;
 }
 
-.main {
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
 .img-portfolio {
   display: block;
   max-width: 100%;
@@ -524,19 +520,9 @@ button {
   gap: 30px;
 }
 
-.cards:hover {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
 .site {
   display: flex;
   gap: 50px;
-}
-
-.container.top {
-  display: flex;
-  align-items: center;
 }
 
 .text-advantages {
@@ -632,18 +618,14 @@ button {
 }
 
 .icon-advantages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 270px;
   height: 120px;
   border-radius: 4px;
   margin-bottom: 30px;
   background-color: var(--button-text-background);
-}
-
-.advantages-svg {
-  margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
 .clients {
@@ -652,6 +634,9 @@ button {
 }
 
 .box-clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 170px;
   height: 92px;
   border: 1px solid var(--svg-link-color);
@@ -665,10 +650,6 @@ button {
 
 .clients-svg {
   fill: var(--svg-link-color);
-  margin-top: 16px;
-  margin-bottom: 16px;
-  margin-left: 32px;
-  margin-right: 32px;
 }
 
 .box-clients:hover svg,
@@ -713,6 +694,10 @@ button {
   background-color: var(--nav-text-color);
 }
 
+.portfolio-link {
+  display: block;
+}
+
 .portfolio-box {
   width: 370px;
   height: 294px;
@@ -733,6 +718,12 @@ button {
 .portfolio-link:hover .portfolio-overlay {
   transform: translateY(0);
   background-color: rgba(33, 150, 243, 0.9);
+}
+
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .text-overlay {
