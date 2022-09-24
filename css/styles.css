@@ -511,6 +511,7 @@ button {
   padding-left: 24px;
   padding-bottom: 20px;
   border-top: none;
+  max-width: 370px;
 }
 
 .portfolio {
